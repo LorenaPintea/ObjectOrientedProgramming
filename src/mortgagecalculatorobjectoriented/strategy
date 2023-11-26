@@ -4,15 +4,18 @@ What do I need?
  1 Class Mortgage
 
  State:
-     - floats: principal, interestRate
-     - byte years
-     - constants: number of months in a year and percentage, min/max for years, annual interest and principal
+    - floats: principal, interestRate
+    - byte years
+    - constants: number of months in a year and percentage, min/max for years, annual interest and principal
 
  Behaviour:
-     - Constructor + getters + setters
-     - calculate mortgage
-     - print mortgage
-     - calculate balance
-     - print payment schedule
+    - Constructor + getters + setters
+    - calculate mortgage
+    - calculate balance
 
- -> In order to respect the SOLID Principles I could implement an interface for printing
+2 Class Printing
+    - print mortgage
+    - print balance
+
+3 Class Console
+    - read from console
