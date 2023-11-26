@@ -8,6 +8,7 @@ public class Console {
     public static double readNumber(String prompt) {
         return scanner.nextDouble();
     }
+
     public static double readNumber(String prompt, double min, double max) {
         double value;
         while (true) {

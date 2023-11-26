@@ -3,15 +3,17 @@ package mortgagecalculatorobjectoriented;
 import java.text.NumberFormat;
 
 public class Printing {
-    private final Mortgage mortgage;
+    private Mortgage mortgage;
+
+    private final NumberFormat currency = NumberFormat.getCurrencyInstance();
 
     public Printing(Mortgage mortgage) {
         this.mortgage = mortgage;
     }
 
-    public  void printMortgage() {
+    public void printMortgage() {
         double value = mortgage.calculateMortgage();
-        String mortgageFormatted = NumberFormat.getCurrencyInstance().format(value);
+        String mortgageFormatted = currency.format(value);
         System.out.println();
         System.out.println("MORTGAGE");
         System.out.println("--------");
@@ -22,9 +24,9 @@ public class Printing {
         System.out.println();
         System.out.println("PAYMENT SCHEDULE");
         System.out.println("----------------");
-        for (short month = 1; month <= mortgage.getYears() * Main.MONTHS_IN_YEAR; month++) {
-            double balance = mortgage.calculateBalance(month);
-            System.out.println(NumberFormat.getCurrencyInstance().format(balance));
-        }
+
+        for (double balance : mortgage.getRemainingBalances())
+            System.out.println(currency.format(balance));
+
     }
 }

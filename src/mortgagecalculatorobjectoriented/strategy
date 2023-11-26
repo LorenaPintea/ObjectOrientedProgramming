@@ -6,8 +6,7 @@ What do I need?
  State:
     - floats: principal, interestRate
     - byte years
-    - constants: number of months in a year and percentage, min/max for years, annual interest and principal
-
+    - constants: number of months in a year and percentage
  Behaviour:
     - Constructor + getters + setters
     - calculate mortgage
